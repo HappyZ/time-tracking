@@ -35,9 +35,9 @@ class DbMysql implements DbEngine {
 		$this->isConnected = false;
 		
 		if (@constant('APP_DB_PERMANENT')) {
-			$this->dblink = @mysql_pconnect($this->host,$this->user,$this->pass);
+			$this->dblink = mysql_pconnect($this->host,$this->user,$this->pass);
 		} else {
-			$this->dblink = @mysql_connect($this->host,$this->user,$this->pass);
+			$this->dblink = mysql_connect($this->host,$this->user,$this->pass);
 		}
 		if (!$this->dblink) {
             return false;
