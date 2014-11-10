@@ -14,7 +14,7 @@
  * 
  * Database helper to give Models (or other classes) database capabilities
  */
-class DbHelper extends Helper implements Callable {
+class DbHelper extends Helper implements Callable2 {
 
 	protected $db;
 	protected $qry;

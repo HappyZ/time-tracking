@@ -218,7 +218,7 @@ abstract class HelpableSingleton {
 					return call_user_func_array(array($obj, $name), $args);
 				}
 			}
-			if (is_a($obj, 'Callable')) {
+			if (is_a($obj, 'Callable2')) {
 				return call_user_func_array(array($obj, $name), $args);
 			}
 		}
@@ -231,7 +231,7 @@ abstract class HelpableSingleton {
  *
  * class implementing this will be able to send calls to other nested classes
  */
-interface Callable {
+interface Callable2 {
 	public function __call($name, $args);
 	/*
 	public function __call($name, $args) {
