@@ -273,10 +273,10 @@ class TaskSummary extends TaskModel {
 		if ($this->isEmpty('deadline')) {
 			$this->_diff = 9999;
 		} else {
-			$dead = strtotime($this->get('deadline'));
+			$dead = date_timestamp_get(new DateTime($this->get('deadline'), $GLOBALS['config']['datetime']['timezone_user']));
 			// -TODO- optimize ! maybe using DateTime diff ?
-			$usernow = date_timestamp_get(new DateTime('now', $GLOBALS['config']['datetime']['timezone_user']));
-			$this->_diff = round(($dead - $usernow) / 3600 / 24);
+			$usernow = date_timestamp_get(new DateTime('now'));
+			$this->_diff = ceil(($dead - $usernow) / 3600 / 24);
 		}		
 	}
 	
