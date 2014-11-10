@@ -568,6 +568,7 @@ abstract class Model extends Pluginable {
  */
 abstract class VarAbstract
 {
+    // TODO: There should be no abstract static methods
 	abstract public static function sanitize($val, &$info);
 	
 	public static function sani($val) {
