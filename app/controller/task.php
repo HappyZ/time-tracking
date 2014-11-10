@@ -193,7 +193,7 @@ class Task extends AppController {
 			if ($this->fc->getReqVar('start')) {
 				$obj->set('deadline', APP_SQL_TODAY);
 			}
-			if ($obj->check($this->switch_id)) {
+			if ($obj->checkUid($this->switch_id)) {
 				$obj->insert();
 			}
 			if ($this->fc->chkReqVar('start')) {
@@ -300,7 +300,7 @@ class Task extends AppController {
 			if ($objTask = TaskModel::parse($val, $defValue, $defDate)) {
 				// really creating a task
 				$objTask->connectDb();
-				if ($objTask->check($this->switch_id)) {
+				if ($objTask->checkUid($this->switch_id)) {
 					$objTask->insert();
 					$i++;
 				}
@@ -322,7 +322,7 @@ class Task extends AppController {
 		$id = $this->_loadTask();
 		$this->data->ignore('creation_date'); // do not submit or change creation date
 		$this->data->set($this->fc->request);
-		if ($this->data->check($this->switch_id)) {
+		if ($this->data->checkUid($this->switch_id)) {
 			$this->data->save();
 			$this->fc->redirect(APP_WWW_URI,($id)?'task_updated':'task_created');
 		}

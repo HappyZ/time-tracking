@@ -30,8 +30,8 @@ class TimerModel extends Model {
 	/**
 	 * check submitted data before saving task
 	 */
-	public function check() {
-		return parent::check('task_id,start,stop,spent');
+	public function check($fields='task_id,start,stop,spent') {
+		return parent::check($fields);
 	}
 	
 	/**

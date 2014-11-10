@@ -150,7 +150,7 @@ class Iphone extends AppController {
 		$this->_loadTask(false);
 		$this->edit->ignore('creation_date'); // do not submit or change creation date
 		$this->edit->set($this->fc->request);
-		if ($this->edit->check($this->fc->user->getUid())) {
+		if ($this->edit->checkUid($this->fc->user->getUid())) {
 			$this->edit->save();
 		}
 		echo '<script>';

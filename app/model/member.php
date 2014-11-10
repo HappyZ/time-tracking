@@ -37,8 +37,8 @@ class MemberModel extends UserAclModel {
 		return implode(', ',$arrTrans);
 	}
 	
-	public function check() {
-		return parent::check('nickname,username');
+	public function check($fields='nickname,username') {
+		return parent::check($fields);
 	}
 	
 }

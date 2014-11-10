@@ -34,7 +34,7 @@ class TaskModel extends Model {
 	/**
 	 * check submitted data before saving task
 	 */
-	public function check($usrId) {
+	public function checkUid($usrId) {
 		if ($this->isEmpty('begin')) {
 			$this->set('begin','9999-00-00');
 		}
