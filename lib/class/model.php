@@ -8,6 +8,8 @@
  * @copyright GNU Lesser General Public License (LGPL) version 3
  */
 
+include_once APP_CLASS_PATH.'pluginable.php';
+
 /**
  * Model
  * 

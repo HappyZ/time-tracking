@@ -6,6 +6,7 @@ include APP_CONFIG_PATH.'app.php';	// load up application specific settings (cus
 // minimum needed classes
 include APP_CLASS_PATH.'helpable.php';
 include APP_HELPER_PATH.'string.php';
+include APP_CLASS_PATH.'model.php';
 include APP_CLASS_PATH.'front.php';
 
 // start session
