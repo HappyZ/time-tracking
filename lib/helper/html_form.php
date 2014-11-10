@@ -30,7 +30,7 @@ class HtmlFormHelper extends Helper {
 		if (!isset($this->obj)) {
 			throw AppException('Can not generate form : no object given in Helper');
 		}
-		$str = $this->iForm($name, $method, $action);
+		$str = self::iForm($name, $method, $action);
 		$str .= $this->obj->iFields($class);
 		$str .= '</form>';
 		return $str;
@@ -42,7 +42,7 @@ class HtmlFormHelper extends Helper {
 	 * @param string $method post, get, or file (post by default)
 	 * @param string $action URL to which form is sent (current page by default)
 	 */
-	public function iForm($name, $method='post', $action='', $class='') {
+	public static function iForm($name, $method='post', $action='', $class='') {
 		$fc = FrontController::getInstance();
 		if (!$action) {
 			$action = $fc->thisUrl();
